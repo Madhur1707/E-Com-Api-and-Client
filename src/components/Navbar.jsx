@@ -12,16 +12,31 @@ display:flex;
 justify-content:space-between;
 `;
 
-const Left = styled.div ``;
-const Center= styled.div ``;
-const Right = styled.div ``;
+const Left = styled.div `
+flex:1;
+`;
+
+const Language = styled.span`
+font-size: 14px;
+cursor: pointer;
+`
+
+
+const Center= styled.div `
+flex:1;
+`;
+const Right = styled.div `
+flex:1;
+`;
 
 
 const Navbar = () => {
   return (
     <Container>
      <Wrapper>
-        <Left>Left</Left>
+        <Left>
+            <Language>EN</Language>
+        </Left>
         <Center>Center</Center>
         <Right>Right</Right>
         </Wrapper>   
