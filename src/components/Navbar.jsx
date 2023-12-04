@@ -1,6 +1,5 @@
 import { Search, ShoppingCart } from '@mui/icons-material';
 import { Badge } from '@mui/material';
-
 import React from 'react'
 import styled from 'styled-components'
 
@@ -21,7 +20,7 @@ flex:1;
 display: flex;
 align-items: center;
 `;
-
+ 
 const Language = styled.span`
 font-size: 14px;
 cursor: pointer;
