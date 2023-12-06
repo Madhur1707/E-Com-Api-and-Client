@@ -69,7 +69,7 @@ const Navbar = () => {
             <Search style={{color:'gray',fontSize:'16px'}}></Search>
           </SearchContainer>
         </Left>
-        <Center><Logo>E-Com_App</Logo></Center>
+        <Center><Logo>DropieCom</Logo></Center>
         <Right>
           <MenuItem>Register</MenuItem>
           <MenuItem>Login</MenuItem>
