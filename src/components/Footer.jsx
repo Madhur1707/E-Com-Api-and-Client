@@ -1,4 +1,12 @@
-import { Facebook, Instagram, LocationOn, Mail,  Phone, Pinterest, Twitter } from "@mui/icons-material";
+import {
+  Facebook,
+  Instagram,
+  LocationOn,
+  Mail,
+  Phone,
+  Pinterest,
+  Twitter,
+} from "@mui/icons-material";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -14,6 +22,7 @@ const Logo = styled.h1``;
 
 const Description = styled.div`
   margin: 20px 0px;
+  text-align: justify;
 `;
 const SocialContainer = styled.div`
   display: flex;
@@ -34,18 +43,18 @@ const Center = styled.div`
   padding: 20px;
 `;
 const Title = styled.h3`
-margin-bottom:30px;
+  margin-bottom: 30px;
 `;
 const List = styled.ul`
-margin:0 ;
-padding: 0;
-list-style: none;
-display: flex;
-flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
 `;
 const ListItem = styled.li`
-width: 50%;
-margin-bottom: 10px;
+  width: 50%;
+  margin-bottom: 10px;
 `;
 
 const Right = styled.div`
@@ -53,17 +62,13 @@ const Right = styled.div`
   padding: 20px;
 `;
 const ContactItem = styled.div`
-display: flex;
-margin-bottom: 20px;
-align-items: center;
-`
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+`;
 const Payment = styled.img`
-width: 100%;
-
-    
-`
-
- 
+  width: 100%;
+`;
 
 const Footer = () => {
   return (
@@ -71,10 +76,11 @@ const Footer = () => {
       <Left>
         <Logo>Dropie.com</Logo>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
-          velit. Consequuntur molestiae, quas iste quibusdam ut quisquam rerum
-          cupiditate voluptate, blanditiis velit pariatur hic nesciunt alias
-          fugit ex illo cumque.
+          Welcome to Dropie.com, your premier destination for seamless and
+          stress-free online shopping! At Dropie, we are dedicated to providing
+          you with a curated selection of high-quality products at competitive
+          prices. Explore our extensive range of items, from fashion and
+          electronics to home decor and beyond.
         </Description>
         <SocialContainer>
           <SocialIcon color="385999">
@@ -109,15 +115,16 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-           <LocationOn style={{marginRight:"10px"}} /> Gwalior, Madhya Pradesh, India.
+          <LocationOn style={{ marginRight: "10px" }} /> Gwalior, Madhya
+          Pradesh, India.
         </ContactItem>
         <ContactItem>
-       <Phone style={{marginRight:"10px"}} />  +918960629039
+          <Phone style={{ marginRight: "10px" }} /> +918960629039
         </ContactItem>
         <ContactItem>
-          <Mail style={{marginRight:"10px"}} /> madhurpathak000@gmail.com
+          <Mail style={{ marginRight: "10px" }} /> madhurpathak000@gmail.com
         </ContactItem>
-    <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
     </Container>
   );
