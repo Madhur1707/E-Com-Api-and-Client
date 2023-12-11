@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Add, Remove } from "@mui/icons-material";
 
 const Container = styled.div``;
+
 const Wrapper = styled.div`
   padding: 20px;
 `;
@@ -114,18 +115,18 @@ const SummaryItem = styled.div`
   margin: 30px 0px;
   display: flex;
   justify-content: space-between;
-  font-weight: ${props => props.type === "total" && "500"};
-  font-size: ${props => props.type === "total" && "24px"};
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "24px"};
 `;
 const SummaryItemText = styled.span``;
 const SummaryItemPrice = styled.span``;
 const Button = styled.button`
-width: 100%;
-padding: 10px;
-background-color: black;
-color: white;
-font-weight: 600;
-cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 `;
 
 const Cart = () => {
@@ -218,7 +219,7 @@ const Cart = () => {
               <SummaryItemPrice>Rs. - 120 </SummaryItemPrice>
             </SummaryItem>
             <SummaryItem type="total">
-              <SummaryItemText >Total</SummaryItemText>
+              <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>Rs. 4580 </SummaryItemPrice>
             </SummaryItem>
             <Button>CHECKOUT NOW</Button>
