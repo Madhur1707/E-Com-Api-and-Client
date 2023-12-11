@@ -8,9 +8,11 @@ import {
   Twitter,
 } from "@mui/icons-material";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
+  ${mobile({ flexDirection: "column" })}
 `;
 const Left = styled.div`
   flex: 1;
@@ -42,6 +44,7 @@ const SocialIcon = styled.div`
 const Center = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ display: "none" })}
 `;
 const Title = styled.h3`
   margin-bottom: 30px;
@@ -61,6 +64,7 @@ const ListItem = styled.li`
 const Right = styled.div`
   flex: 1;
   padding: 20px;
+  ${mobile({ backgroundColor: "#f5e4e4" })}
 `;
 const ContactItem = styled.div`
   display: flex;
@@ -75,9 +79,9 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>Dropie.com</Logo>
+        <Logo>TrendVista</Logo>
         <Description>
-          Welcome to Dropie.com, your premier destination for seamless and
+          Welcome to TrendVista, your premier destination for seamless and
           stress-free online shopping! At Dropie, we are dedicated to providing
           you with a curated selection of high-quality products at competitive
           prices. Explore our extensive range of items, from fashion and
