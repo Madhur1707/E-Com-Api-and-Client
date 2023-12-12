@@ -81,7 +81,7 @@ const Footer = () => {
       <Left>
         <Logo>TrendVista</Logo>
         <Description>
-          Welcome to TrendVista, your premier destination for seamless and
+          Welcome To TrendVista, Your Premier Destination for seamless and
           stress-free online shopping! At Dropie, we are dedicated to providing
           you with a curated selection of high-quality products at competitive
           prices. Explore our extensive range of items, from fashion and
