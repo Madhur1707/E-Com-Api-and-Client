@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import styled from "styled-components";
 import { Add, Remove } from "@mui/icons-material";
 import { mobile } from "../responsive";
+import { useSelector } from "react-redux";
 
 const Container = styled.div``;
 
@@ -138,6 +139,7 @@ const Button = styled.button`
 `;
 
 const Cart = () => {
+  const cart = useSelector((state) => state.cart);
   return (
     <Container>
       <Navbar />
@@ -154,69 +156,46 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            <Product>
-              <ProductDetails>
-                <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
-                <Details>
-                  <ProductName>
-                    {" "}
-                    <b>Product:</b>Running Shoes
-                  </ProductName>
-                  <ProductId>
-                    {" "}
-                    <b>ID:</b>569824
-                  </ProductId>
-                  <ProductColor color="black" />
-                  <ProductSize>
-                    {" "}
-                    <b>Size:</b>8
-                  </ProductSize>
-                </Details>
-              </ProductDetails>
-              <PriceDetails>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>Rs.2200</ProductPrice>
-              </PriceDetails>
-            </Product>
+            {cart.products.map((product) => (
+              <Product>
+                <ProductDetails>
+                  <Image src={product.img} />
+                  <Details>
+                    <ProductName>
+                      {" "}
+                      <b>Product:</b>
+                      {product.title}
+                    </ProductName>
+                    <ProductId>
+                      {" "}
+                      <b>ID:</b>
+                      {product._id}
+                    </ProductId>
+                    <ProductColor color={product.color} />
+                    <ProductSize>
+                      <b>Size:</b> {product.size}
+                    </ProductSize>
+                  </Details>
+                </ProductDetails>
+                <PriceDetails>
+                  <ProductAmountContainer>
+                    <Add />
+                    <ProductAmount>{product.quantity}</ProductAmount>
+                    <Remove />
+                  </ProductAmountContainer>
+                  <ProductPrice>
+                    ${product.price * product.quantity}
+                  </ProductPrice>
+                </PriceDetails>
+              </Product>
+            ))}
             <Hr />
-            <Product>
-              <ProductDetails>
-                <Image src="https://static.zara.net/photos///2023/I/0/2/p/5639/097/807/4/w/1920/5639097807_6_1_1.jpg?ts=1690446137278" />
-                <Details>
-                  <ProductName>
-                    {" "}
-                    <b>Product:</b> Zara Shirt
-                  </ProductName>
-                  <ProductId>
-                    {" "}
-                    <b>ID:</b>544712
-                  </ProductId>
-                  <ProductColor color="gray" />
-                  <ProductSize>
-                    {" "}
-                    <b>Size:</b>L
-                  </ProductSize>
-                </Details>
-              </ProductDetails>
-              <PriceDetails>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>Rs.2500</ProductPrice>
-              </PriceDetails>
-            </Product>
           </Info>
           <Summary>
             <SummaryTitle>Order Summary</SummaryTitle>
             <SummaryItem>
               <SummaryItemText>SubTotal</SummaryItemText>
-              <SummaryItemPrice>Rs.4700 </SummaryItemPrice>
+              <SummaryItemPrice>$ {cart.total} </SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Estimated Shipping</SummaryItemText>
@@ -228,7 +207,7 @@ const Cart = () => {
             </SummaryItem>
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
-              <SummaryItemPrice>Rs. 4580 </SummaryItemPrice>
+              <SummaryItemPrice>${cart.total} </SummaryItemPrice>
             </SummaryItem>
             <Button>CHECKOUT NOW</Button>
           </Summary>

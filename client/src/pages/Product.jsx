@@ -8,6 +8,8 @@ import { mobile } from "../responsive";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { publicRequest } from "../requestMethods";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const Container = styled.div``;
 
@@ -65,7 +67,7 @@ const FilterColor = styled.div`
   border-radius: 50%;
   background-color: ${(props) => props.color};
   margin: 0px 5px;
-  cursor: pointer;
+  cursor: pointer; 
 `;
 
 const FilterSize = styled.select`
@@ -119,7 +121,7 @@ const Product = () => {
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
   const [size, setSize] = useState("");
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
@@ -140,7 +142,7 @@ const Product = () => {
   };
 
   const handleClick = () => {
-    // dispatch(addProduct({ ...product, quantity, color, size }));
+    dispatch(addProduct({ ...product, quantity, color, size }));
   };
 
   return (
@@ -163,7 +165,7 @@ const Product = () => {
               ))}
             </Filter>
             <Filter>
-              <FilterTitle>Size</FilterTitle>
+            <FilterTitle>Size</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>
