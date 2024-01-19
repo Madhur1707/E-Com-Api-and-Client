@@ -67,7 +67,7 @@ const FilterColor = styled.div`
   border-radius: 50%;
   background-color: ${(props) => props.color};
   margin: 0px 5px;
-  cursor: pointer; 
+  cursor: pointer;
 `;
 
 const FilterSize = styled.select`
@@ -165,7 +165,7 @@ const Product = () => {
               ))}
             </Filter>
             <Filter>
-            <FilterTitle>Size</FilterTitle>
+              <FilterTitle>Size</FilterTitle>
               <FilterSize onChange={(e) => setSize(e.target.value)}>
                 {product.size?.map((s) => (
                   <FilterSizeOption key={s}>{s}</FilterSizeOption>

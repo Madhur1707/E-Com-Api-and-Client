@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {login} from "../redux/apiCalls"
+import { login } from "../redux/apiCalls";
 
 const Container = styled.div`
   width: 100vw;
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   padding: 20px;
   width: 25%;
   background-color: white;
-  ${mobile({  width: "75%" })}
+  ${mobile({ width: "75%" })}
 `;
 
 const Form = styled.form`
@@ -51,7 +51,7 @@ const Button = styled.button`
   color: white;
   cursor: pointer;
   margin-bottom: 10px;
-  & :disabled{
+  & :disabled {
     color: green;
     cursor: not-allowed;
   }
@@ -65,14 +65,14 @@ const Link = styled.a`
 `;
 
 const Error = styled.span`
-color: red;
-`
+  color: red;
+`;
 
 const Login = () => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const  dispatch = useDispatch()
-  const {isFetching, error} = useSelector(state=> state.user)
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const { isFetching, error } = useSelector((state) => state.user);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -83,11 +83,20 @@ const Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder="Username" onChange={(e)=> setUsername(e.target.value)} />
-          <Input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)}/>
-          <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
-         {error &&  <Error>Something Went Wrong...</Error>}
-          <Link>Forgot Password ?</Link>
+          <Input
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Input
+            placeholder="Password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button onClick={handleClick} disabled={isFetching}>
+            LOGIN
+          </Button>
+          {error && <Error>Something Went Wrong...</Error>}
+          <Link>Forgot Password ? </Link>
           <Link>Create A New Account.</Link>
         </Form>
       </Wrapper>
